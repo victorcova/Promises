@@ -89,44 +89,25 @@ _____
 
 Ajax (Asynchronous Javascript And Xml):
 
-O Ajax usa o objeto XMLHttpRequest (XHR) interno do navegador para enviar e receber informações de e para um servidor web de forma assíncrona, mas em segundo plano, sem bloquear a página ou interferir na experiência da pessoa usuária. 
+Significa: JS+XML assíncrono.
+É um meio de carregar os dados e atualizar uma página sem precisar atualizá-la.
+Exemplo: Você digita o CEP e os dados vem carregados na tela (sem atualizar a página).
 
-XMLHttpRequest (XHR) é um objeto que é usado na interação com servidores para receber dados de uma URL sem ter que atualizar de novo a página (requisição assíncrona).
 
-// 1. Criando XMLHttpRequest
-const xhr = new XMLHttpRequest();
+O Ajax usa o objeto XMLHttpRequest (XHR) interno do navegador para enviar e receber informações de e para um servidor web de forma assíncrona, mas em segundo plano, sem bloquear a página ou interferir na experiência da pessoa usuária. XMLHttpRequest (XHR) é um objeto que é usado na interação com servidores para receber dados de uma URL sem ter que atualizar de novo a página (requisição assíncrona).
 
-/* 2. Inicialize o `XMLHttpRequest
-method – Método HTPP (string)
-URL – URL do recurso (string ou objeto)
-async – Especifica se a requisição é síncrona (booleano) [opcional]
-user, password – login e senha para autenticação básica [opcional] 
-*/
-xhr.open(method, URL, [async, user, password])
+Como criar o XMLHttpRequest, veja: script-xhr.js
+Como criar o fetch, veja: script-fetch.js
+_____
 
-/* 3. Envie a requisição
-body é opcional e contém dados que serão enviados junto com a requisição
-*/
-xhr.send([body])
+Async e Await:
 
-/* 4. Escute os "eventos" de resposta. Os três eventos principais de resposta são:
-load – a requisição já foi concluída, independente se há erros ou não
-error – houve um erro na requisição e ela não pode ser enviada (falha de conexão ou URL inválida, por exemplo)
-progress – disparado periodicamente enquanto a resposta está sendo obtida; retorna quanto da resposta já foi obtida
-*/
-xhr.onload = function() {
-  alert(`Loaded: ${xhr.status} ${xhr.response}`);
-};
+São soluções para garantir que o código rode corretamente esperando que os resultados fora do escopo atual seja corretamente carregado.
 
-xhr.onerror = function() { 
-  alert(`Network Error`);
-};
+Async - garante que a função retorne uma promise e encapsule códigos como promises.
+Await - literalmente suspende a execução da função até que a promise seja concluída e, em seguida, a retoma com o resultado da promessa.
 
-xhr.onprogress = function(event) {
-   /* Propriedades de event
-event.loaded - Quanto já foi baixado
-event.lengthComputable - É igual a true se o servidor possuir o header Content-Length
-event.total - Total de bytes (se event.lengthComputable for verdadeiro)
-  */
-  alert(`Received ${event.loaded} of ${event.total}`);
-};
+Um não existe sem o outro!
+await só funciona dentro de funções assincronas.
+
+Veja os códigos do arquivo: script-async-await.js
