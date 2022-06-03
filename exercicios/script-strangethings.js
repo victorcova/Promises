@@ -18,11 +18,11 @@ async function quotesStrangeThings(numQuotes){
             console.log(frase.substr(0,11))
         });
 
-        console.log(`${numQuotes} Frase(s) strange Things: \n\n${quotes}`);                
+        console.log(`${numQuotes} Frase(s) Stranger Things: \n\n${quotes}`);                
 
     } catch (error){
         console.log("HOUVE UM ERRO: " + error.name + " - " + error.message);
     }
 }
 
-quotesStrangeThings(3);
+quotesStrangeThings(5);
