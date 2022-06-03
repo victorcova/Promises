@@ -8,12 +8,10 @@ async function quotesStrangeThings(numQuotes){
         const response = await fetch (`https://strangerthings-quotes.vercel.app/api/quotes/${numQuotes}`);
         const data = await response.json();
 
-        const quotes = data.map(function (quoteAuthor) { // função aqui mapeando os dados
+        const quotes = data.map(function (quoteAuthor) {
             const parte1 = quoteAuthor.quote;
             const parte2 = quoteAuthor.author;
-            return `${parte1} - ${parte2}\n\n`;
-            
-            console.log(frase.substr(0,11))
+            return `${parte1} - ${parte2}\n\n`;                    
         });
 
         console.log(`${numQuotes} Frase(s) Stranger Things: \n\n${quotes}`);                
