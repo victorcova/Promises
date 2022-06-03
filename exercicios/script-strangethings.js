@@ -25,12 +25,4 @@ async function quotesStrangeThings(numQuotes){
     }
 }
 
-// function quotesStrangeThings(){
-//     fetch(`https://strangerthings-quotes.vercel.app/api/quotes`)
-//         .then((response) => response.json()) // THEN para trazer a resposta
-//         .then(data => { // THEN para trazer o resultado final (data)
-//             console.log(data);
-//         }); 
-// }
-
 quotesStrangeThings(3);
